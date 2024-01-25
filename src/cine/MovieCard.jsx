@@ -15,12 +15,12 @@ export default function MovieCard({ movie }) {
     setSelectedMovie(movie);
     setShowModal(true);
   }
-  function handleAddToCart(movie, event) {
-    event.stopPropagation();
+  function handleAddToCart(e, movie) {
+    e.stopPropagation();
     const found = cartData.find((item) => {
       return item.id === movie.id;
     });
-    console.log(movie);
+    // console.log(movie);
     if (!found) {
       setCartData([...cartData, movie]);
     } else {
@@ -53,7 +53,7 @@ export default function MovieCard({ movie }) {
             <a
               className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
               href="#"
-              onClick={(e) => handleAddToCart(movie, e)}
+              onClick={(e) => handleAddToCart(e, movie)}
             >
               <img src="./assets/tag.svg" alt="" />
 

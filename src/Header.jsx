@@ -7,7 +7,7 @@ import CartDetails from "./cine/CartDetails";
 import { MovieContext } from "./context";
 export default function Header() {
   const [showCart, setShowCart] = useState(false);
-  const { cartData } = useContext(MovieContext);
+  const { cartData, setCartData } = useContext(MovieContext);
   // console.log(cartData);
   function handleCartShow() {
     setShowCart(true);
